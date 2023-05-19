@@ -7,6 +7,9 @@ import { Hero } from "@/components/Hero";
 import { SignIn } from "@/components/SignIn";
 import { EmptyMemories } from "@/components/EmptyMemories";
 
+import { cookies } from "next/headers";
+import { Profile } from "@/components/Profile";
+
 const roboto = Roboto({ subsets: ["latin"], variable: "--font-roboto" });
 
 const baiJamjuree = BaiJamjuree({
@@ -16,6 +19,8 @@ const baiJamjuree = BaiJamjuree({
 });
 
 export default function Home() {
+  const isAuthenticate = cookies().has('token')
+
   return (
     <main
       className={`${roboto.variable} ${baiJamjuree.variable} font-sans grid grid-cols-2 min-h-screen`}
@@ -26,7 +31,7 @@ export default function Home() {
         
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes "></div>
 
-        <SignIn />
+        { isAuthenticate ? <Profile/>: <SignIn />}
 
         <Hero />
 
