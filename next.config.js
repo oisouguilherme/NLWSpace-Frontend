@@ -5,4 +5,8 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = {
+  images: {
+    domains: ['192.168.1.3','avatars.githubusercontent.com' ],
+  },
+}
