@@ -7,6 +7,6 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ['192.168.1.3','avatars.githubusercontent.com' ],
+    domains: ['192.168.1.4','avatars.githubusercontent.com' ],
   },
 }
